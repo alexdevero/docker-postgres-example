@@ -12,8 +12,8 @@ services:
       ports:
         - "5432:5432"
       volumes:
-        - $HOME/Desktop/PostgreSql-Snippets/infile:/infile
         - pg_data:/var/lib/postgresql/data/
+        - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
 
 volumes:
   pg_data:
